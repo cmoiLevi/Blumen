@@ -1,0 +1,21 @@
+:root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    --bg: #fbf4ea; --btn-bg: #2f6b3a; --btn-fg: #fff;
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #1b1a22; --btn-bg: #8fd99a; --btn-fg: #10200f; }
+}
+html, body { height: 100%; margin: 0; }
+body {
+    background: var(--bg);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
+    font-family: Georgia, "Times New Roman", serif;
+}
+canvas { width: min(92vw, 440px); aspect-ratio: 4 / 5; max-height: 78vh; }
+button {
+    font: inherit; font-size: 1rem; padding: .6rem 1.4rem; border: 0; border-radius: 999px;
+    background: var(--btn-bg); color: var(--btn-fg); cursor: pointer;
+}
+button:focus-visible { outline: 3px solid var(--btn-bg); outline-offset: 3px; }
